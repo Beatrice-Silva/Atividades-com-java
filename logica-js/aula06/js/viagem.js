@@ -14,5 +14,5 @@ botao.onclick = () => {
   saida.textContent = `${litros.toFixed(1)} litros\nIda: R$ ${ida.toFixed(2)}\nIda e volta: R$ ${idaVolta.toFixed(2)}`
 }
 
-// Pergunta: o que aparece quando consumo é 0?
+
 // dá infinito) nos litros e no custo, porque divisão por zero em JS não dá erro
