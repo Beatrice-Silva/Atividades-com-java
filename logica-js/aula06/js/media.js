@@ -9,10 +9,14 @@ botao.onclick = () => {
   // 2. calcular
   const media = (n1 + n2) / 2
   
-  // 3. mostrar
-  saida.textContent = "Média: " + media.toFixed(1)
-  saida.className = "resultado ok"
+  
+if(m = ){
+saida.textContent = "Aprovado com média: " + media.toFixed(1)
+saida.className = "ok"
+}else if (m = ){
+saida.textContent = "Reprovado com média" + media.toFixed(1)
+saida.className = "erro"
+}
 }
 
-// Sem number() o n1 e n2 tornam strings "2" e "3"
-// O resultado se torna "23" devido a junta de ambas apenas 
+
