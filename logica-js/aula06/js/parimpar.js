@@ -1,13 +1,9 @@
 const botao = document.querySelector("#calcular")
 const saida = document.querySelector("#resultado")
-
-botao.onclick = () => {
-
-
-}
-
 num = ""
 
+botao.onclick = () => {
+    
 if(num % 2 === 0){  
 
     saida.className = "ok"
@@ -20,5 +16,4 @@ if(num % 2 === 0){
 
 }
 
-
-
+}

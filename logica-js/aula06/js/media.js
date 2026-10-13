@@ -10,13 +10,15 @@ botao.onclick = () => {
   const media = (n1 + n2) / 2
   
   
-if(m = ){
+if(media >= 7){
 saida.textContent = "Aprovado com média: " + media.toFixed(1)
-saida.className = "ok"
-}else if (m = ){
+  saida.className = "ok"
+}else{
 saida.textContent = "Reprovado com média" + media.toFixed(1)
 saida.className = "erro"
 }
+
+
 }
 
 
