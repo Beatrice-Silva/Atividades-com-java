@@ -24,7 +24,24 @@ body {
   padding: 24px;
 }
 
+.exercicio {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
 
+.bloco {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+/* ===== 4. Componentes ===== */
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
 
 .container {
   width: min(720px, 100%);
@@ -84,7 +101,36 @@ p {
   margin-right: 10px;
   vertical-align: middle;
 }
+input,
+select {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+}
 
+button {
+  margin-top: 1.25rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  color: var(--cor-fundo);
+  background: var(--cor-destaque);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
 .resultado,
 .ok,
 .alerta,
@@ -95,3 +141,8 @@ p {
   background: var(--cor-suave);
   white-space: pre-line;
 }
+
+
+.ok     { border-color: #2E7D32; background: #E8F5E9; }
+.alerta { border-color: #F9A825; background: #FFF8E1; }
+.erro   { border-color: #C62828; background: #FFEBEE; }
