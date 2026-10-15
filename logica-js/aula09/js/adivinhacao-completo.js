@@ -1,56 +1,46 @@
-const botao2 = document.querySelector("#adivinhar")
+let secreto = Math.floor(Math.random() * 100) + 1;
+let tentativas = 0;
+let fim = false;
+let historicoTexto = "";
 
+        const input = document.querySelector("#chute");
+        const btn = document.querySelector("#btn-adivinhar");
+        const saida = document.querySelector("#resultado");
+        const saidaHist = document.querySelector("#historico");
+        const saidaRestam = document.querySelector("#restam");
 
-const botao1 = document.querySelector("#sortear")
-const saidaa = document.querySelector("#resultado")
+        btn.onclick = () => {
+            if (fim) {
+                saida.textContent = "O jogo acabou. Aperte F5 para jogar de novo.";
+                saida.className = "erro";
+                return;
+            }
 
-const n1 = Number(document.querySelector("#ni").value)
+            const chute = Number(input.value);
 
-let tent = 6
-let ni = 0
+            if (!chute || chute < 1 || chute > 100) {
+                saida.textContent = "Campo vazio ou fora de 1 a 100! Não conta como tentativa.";
+                saida.className = "erro";
+                return;
+            }
 
-botao1.onclick = () =>{
+            tentativas++;
+            historicoTexto += chute + " ";
+            saidaHist.textContent = "Chutes: " + historicoTexto;
 
-    const ns = Math.floor(Math.random() * 100) + 1 
-
-}
-
-botao2.onclick = () =>{
-
-    if(tent !== 0){
-        
-        tent = tent - 1
-
-        tents.text.document= "Possui :" + i +"tentativas"
-        saida.className = "ok"
-
-       while(ni !== ns){
-
-    if( ni < ns){
-    
-        saida.textContent = "MAIOR"
-        saida.className = "alerta"
-    
-    }else if( ni > ns){
-
-        saida.textContent = "MENOR"
-        saida.className = "alerta"
-
-    }else if( ni === ns){
-
-        saida.textContent = "Parabéns! Você acertou o numero sorteado!"
-        saida.className = "ok"
-
-    }else{
-        saida.textContent = "Erro devido valores inválidos"
-        saida.className = "erro"
-    }
-        }
-    }else{
-        saida.textContent = "Fim de jogo!" +
-        "A resposta é:" + ns + "e voçê terminou com "+ tent +
-        "tentativas."
-    }
-}
-
-
+            if (chute === secreto) {
+                saida.textContent = `Acertou em ${tentativas} tentativas!`;
+                saida.className = "ok";
+                fim = true;
+            } else if (tentativas >= 7) {
+                saida.textContent = `Suas 7 tentativas acabaram. O número era ${secreto}.`;
+                saida.className = "erro";
+                fim = true;
+            } else {
+                saida.textContent = chute < secreto ? "é MAIOR" : "é MENOR";
+                saida.className = "alerta";
+                saidaRestam.textContent = `Restam ${7 - tentativas} tentativas.`;
+            }
+            input.value = "";
+            input.focus();
+        };

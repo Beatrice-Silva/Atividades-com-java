@@ -3,40 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O jogo de adivinhacao</title>
+    <title>Adivinhação Completo</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <main>
+    <main class="container">
+        <h1>O Jogo - 7 Tentativas</h1>
+        <h2 id="restam">Restam 7 tentativas</h2>
 
-        <h1>O jogo</h1>
-        <h2>
-            A seguir segue-se um jogo de adivinhação, um número alatório
-            sera escolhido e o usuário deve adivinhar-lo baseado 
-            nas respostas de acordo com o quão perto do nívl de acerto estiver:
-            'Maior' ou 'Menor'.
-        </h2>
+        <label for="chute">Adivinhe:</label>
+        <input id="chute" type="number" min="1" max="100" placeholder="insira aqui">
+        <button id="btn-adivinhar">Adivinhar</button>
 
-        <h2>Jogador possui 7 tentativas atualmente!</h2>
-        <label for="enunciado">Siga com 'sim' quando desejar que 
-            comece o jogo com
-            o número aleatório escolhido.
-        </label>
+        <p id="resultado" class="resultado">Quão perto...</p>
+        <p id="historico" class="resultado"></p>
 
-        <button id="sortear">Sortear e Começar</button>
-        
-        <label for="questao">Adivinhe a seguir:</label>
-        <input id="questao" class="ni" placeholder="insira aqui">
-
-        <button id="botao2">Adivinhar</button>
-
-        <p id="resultado" class="adivinhar">Quão perto...</p>
-        
-
-        
-    <p><a href="../index.html">Voltar para a lista</a></p>
+        <p><a href="../index.html">Voltar</a></p>
     </main>
-
-    
-    <script src="js/ojogo.js"></script>
+    <script></script>
 </body>
 </html>
